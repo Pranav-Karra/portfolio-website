@@ -1,7 +1,19 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Github, X, BookOpen } from "lucide-react";
 
+const awardBadgeClassName =
+  "px-3 py-1 rounded-full text-sm font-semibold text-white [text-shadow:0_1px_2px_rgba(0,0,0,0.45)] bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-[#FFD700] border border-[#D4AF37]/70 shadow-[0_0_10px_rgba(255,215,0,0.45),0_0_20px_rgba(212,175,55,0.35)] ring-1 ring-yellow-200/30";
+
 const projects = [
+  {
+    title: "swiftER",
+    image: "/images/swiftER Demo.gif",
+    blurb: "An AI-powered ambulance & multi-hospital management system for faster (swifter), smarter care.",
+    skills: ["Python", "FastAPI", "TypeScript", "PostgreSQL", "Supabase", "Wispr Flow", "Wood Wide AI", "OSRM", "Gemini API", "Agentic AI", "NLP"],
+    githubUrl: "https://github.com/NishnathPolav/SwiftER",
+    badge: "NexHacks 2026 Winner 🏆",
+    detailedDescription: "A real-time system that matches ambulances to hospitals automatically, replacing manual radio dispatch with data-driven routing decisions. On the ambulance side, Wispr Flow transcribes spoken patient symptoms into text, which a reasoning agent parses into structured data and matches against live hospital information; once a match is found, the ambulance's navigation is automatically updated to route there. On the hospital side, the system tracks incoming ambulances alongside real-time bed capacity and specialist availability, so every new match reflects the hospital's actual current state. The front-end is built with React, TypeScript, Vite, and TailwindCSS, and includes a tablet-based Ambulance App, individual Hospital Dashboards, and a centralized Maps Dashboard built with MapLibre GL JS that tracks every ambulance and hospital on a live map. The backend runs on Python (FastAPI) agents, including a Reasoning Agent for NLP extraction and a routing agent (built on Wood Wide AI) that scores hospital fit using OSRM for real road-based ETAs. Supabase (PostgreSQL) serves as the central source of truth for patient incidents and hospital data, keeping every connected dashboard synchronized as new information arrives. The project demonstrates coordination of several concurrently updating services into one cohesive real-time system, applying speech-to-text, NLP, and decision-model logic to a problem where both speed and accuracy directly affect patient outcomes."
+  },
   {
     title: "Story.0",
     image: "/images/Story0 Demo.gif",
@@ -81,10 +93,17 @@ export const ProjectsSection = () => {
           {projects.map((project, idx) => (
             <div
               key={idx}
-              className={`flex flex-col gradient-border card-hover rounded-lg overflow-hidden bg-background shadow-lg transition-all duration-1000 ease-out delay-${idx * 200} ${
+              className={`relative flex flex-col gradient-border card-hover rounded-lg overflow-hidden bg-background shadow-lg transition-all duration-1000 ease-out delay-${idx * 200} ${
+                project.badge ? "hover:ring-1 hover:ring-[#D4AF37]/50 hover:shadow-[0_0_12px_rgba(212,175,55,0.2)]" : ""
+              } ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
               }`}
             >
+              {project.badge && (
+                <span className={`absolute top-3 right-3 z-10 ${awardBadgeClassName}`}>
+                  {project.badge}
+                </span>
+              )}
               <img
                 src={project.image}
                 alt={project.title}
@@ -150,10 +169,16 @@ export const ProjectsSection = () => {
               {/* Close button */}
               <button
                 onClick={closeModal}
-                className="absolute top-4 right-4 z-10 p-3 rounded-full bg-primary/20 hover:bg-primary/40 transition-all duration-300 hover:scale-110 border border-primary/30"
+                className="absolute top-4 right-4 z-20 p-3 rounded-full bg-primary/20 hover:bg-primary/40 transition-all duration-300 hover:scale-110 border border-primary/30"
               >
                 <X size={20} className="text-primary" />
               </button>
+
+              {selectedProject.badge && (
+                <span className={`absolute top-16 right-4 z-10 ${awardBadgeClassName}`}>
+                  {selectedProject.badge}
+                </span>
+              )}
               
               {/* Project image */}
               <img

@@ -23,6 +23,14 @@ export const ExperienceSection = () => {
 
     const experiences = [
         {
+            role: "Software Engineering Intern",
+            company: "Anduril Industries",
+            period: "May 2026 - Aug. 2026",
+            description: "Shipped 3 end-to-end features for a high-fidelity real-time 3D simulation platform in Unreal Engine. Trained a CUT/CycleGAN sim-to-real image-translation ML pipeline on a 122k+ image dataset using Flyte workflows. Deployed as on-GPU inference pass in Unreal (26ms/38 FPS)",
+            tools: ["Pytorch", "C++", "Rust", "Unreal Engine", "Protobuf", "gRPC", "Machine Learning"],
+            companyImage: "/images/Anduril.jpg"
+        },
+        {
             role: "Software Developer",
             company: "Try Catch Robotics",
             period: "May 2025 - Aug. 2025",
