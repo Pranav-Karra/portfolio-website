@@ -6,6 +6,15 @@ const awardBadgeClassName =
 
 const projects = [
   {
+    title: "Phantom",
+    image: "/images/glasses.jpg",
+    blurb: "A home-made Jarvis for your smart glasses that makes decisions for you.",
+    skills: ["Python", "Gemini Live API", "Meta Glasses", "WebSockets", "OpenClaw", "Asyncio", "REST APIs", "Agentic AI", "Multimodal Input"],
+    githubUrl: "https://github.com/Pranav-Karra",
+    badge: "VentureHacks 2026 Winner 🏆",
+    detailedDescription: "A confidence-aware AI agent built for smart glasses, designed to act on what you see and say without needing a phone or screen in the loop. Audio and video from Meta Ray-Ban glasses stream into the pipeline through the companion app, where the Gemini Live API interprets both modalities together and proposes an action in response, whether that's saving a contact from a business card, queuing a song, or looking something up mid-conversation. Rather than treating every action the same way, a policy layer sits between Gemini's output and execution: Gemini attaches a confidence estimate to each proposed action, and a set of deterministic rules decides whether it runs immediately, asks for a quick confirmation first, or waits for an explicit prompt from the user. Everything is built in Python, with FastAPI, asyncio, and WebSockets handling the streaming input so the pipeline never blocks while waiting on a model response. Execution itself runs through a self-hosted OpenClaw Gateway, extended with a custom skill that intercepts every action before it fires, giving the policy layer a single checkpoint to enforce across more than half a dozen integrated tools, spanning messaging, media, contacts, and search. In testing across dozens of real conversations, the system consistently caught the right moments to act on its own versus the moments that called for a human check-in. The project was as much about designing that judgment layer as it was about the multimodal pipeline underneath it, since the harder problem was never getting an AI to take actions, but teaching it when it shouldn't."
+  },
+  {
     title: "swiftER",
     image: "/images/swiftER Demo.gif",
     blurb: "An AI-powered ambulance & multi-hospital management system for faster (swifter), smarter care.",
