@@ -51,12 +51,19 @@ export const EducationSection = () => {
     };
 
     const relevantCoursework = [
-        'Data Structures and Algorithms',
+        'Deep Learning Systems',
+        'Introduction to Machine Learning',
+        'Natural Language Processing',
         'Computer Systems',
+        'Parallel and Sequential Algorithms',
+        'Probability Theory',
         'Functional Programming',
+        'Great Theoretical Ideas in Computer Science',
         'Discrete Math',
+        'Data Structures and Algorithms',
         '3D Vector Calculus',
         'Linear Algebra',
+        'Software Secutiy and Privacy',
       ];
 
       const affiliations = [

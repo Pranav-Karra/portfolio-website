@@ -32,41 +32,50 @@ export const AboutSection = () => {
     };
 
     const frontendSkills = [
-        "HTML5",
-        "CSS3",
-        "Javascript",
         "React",
+        "Typescript",
+        "Javascript",
+        "Vite",
         "TailwindCSS",
+        "HTML",
+        "CSS",
     ];
 
     const backendSkills = [
-        "Node.js",
         "Python",
-        "Java",
+        "Rust",
         "C/C++",
+        "FastAPI",
+        "gRPC",
+        "Protocol Buffers",
+        "Node.js",
+        "Java",
         "SQL",
-        "MongoDB",
     ];
 
     const devopsSkills = [
         "Git",
-        "AWS",
         "Docker",
+        "Nix",
+        "AWS",
         "CI/CD",
         "Linux/Unix",
-        "Vim",
-        "VS Code",
-        "Firebase"
+        "Supabase",
+        "PostgreSQL",
+        "MongoDB",
+        "Redis",
     ];
 
     const mlLibraries = [
         "PyTorch",
+        "TensorFlow",
         "TorchVision",
         "OpenCV",
-        "Matplotlib",
         "scikit-learn",
+        "ONNX",
         "pandas",
         "numpy",
+        "Matplotlib",
     ];
 
     return (
